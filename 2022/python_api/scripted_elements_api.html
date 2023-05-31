@@ -69,10 +69,29 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="python_api.html">Python API functions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Scripted elements API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-dialog-function">The <code class="docutils literal notranslate"><span class="pre">dialog</span></code> function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-calculation-function">The <code class="docutils literal notranslate"><span class="pre">calculation</span></code> function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-dialog-function">The <code class="docutils literal notranslate"><span class="pre">dialog</span></code> function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#signature">Signature</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parameter-context">Parameter <code class="docutils literal notranslate"><span class="pre">context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameter-params">Parameter <code class="docutils literal notranslate"><span class="pre">params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#calculating-a-preview">Calculating a preview</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-calculation-function">The <code class="docutils literal notranslate"><span class="pre">calculation</span></code> function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Signature</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Parameter <code class="docutils literal notranslate"><span class="pre">context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Return value</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#scripted-actuals-return-values">Scripted actuals - Return values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scripted-checks-return-values">Scripted checks - Return values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scripted-checks-return-values">Scripted checks - Return values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supported-element-types">Supported Element Types</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resource_api.html">gom.Resource API</a></li>
@@ -111,45 +130,330 @@
 </div>
 <section id="the-dialog-function">
 <h2>The <code class="docutils literal notranslate"><span class="pre">dialog</span></code> function<a class="headerlink" href="#the-dialog-function" title="Permalink to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This content was previously part of the GOM Connect. See <a class="reference external" href="https://connect.gom.com/display/GPF/Scripted+Elements+API+Reference">here</a>.</p>
-<p>Content will be migrated shortly.</p>
-</div>
-<p>Notes:</p>
+<p>💡 <strong>Notes:</strong></p>
 <ul class="simple">
 <li><p>The main purpose of this function is to use display a script dialog and allow the user to enter element parameters.</p></li>
 <li><p>All tokens of other elements can be accessed within this function.</p></li>
 </ul>
+<section id="signature">
+<h3>Signature<a class="headerlink" href="#signature" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dialog</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+</pre></div>
+</div>
+<section id="parameter-context">
+<h4>Parameter <code class="docutils literal notranslate"><span class="pre">context</span></code><a class="headerlink" href="#parameter-context" title="Permalink to this heading"></a></h4>
+<p>The context contains the following members:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Role</p></th>
+<th class="head"><p>Remarks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>.data</p></td>
+<td><p>UDE data storage access</p></td>
+<td><p>see “calculate” Function</p></td>
+</tr>
+<tr class="row-odd"><td><p>.stages</p></td>
+<td><p>Current stage</p></td>
+<td><p>List containing stage index of current stage</p></td>
+</tr>
+<tr class="row-even"><td><p>.total_stages</p></td>
+<td><p>Number of stages</p></td>
+<td><p>Valid stage indices are 0 to total_stages - 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>.calc</p></td>
+<td><p>Function to calculate preview</p></td>
+<td><p>See below</p></td>
+</tr>
+<tr class="row-even"><td><p>.result</p></td>
+<td><p>Directly set preview</p></td>
+<td><p>see “calculate” Function</p></td>
+</tr>
+<tr class="row-odd"><td><p>.is_new_element</p></td>
+<td><p>Flag if element creation</p></td>
+<td><p>True on (edit) creation, false on recalc</p></td>
+</tr>
+<tr class="row-even"><td><p>.name</p></td>
+<td><p>Name of created element</p></td>
+<td><p>Read/write attribute<br>Ignored on recalc and script execution</p></td>
+</tr>
+<tr class="row-odd"><td><p>.error</p></td>
+<td><p>Last error text from preview calculation</p></td>
+<td><p>Empty if no error occurred</p></td>
+</tr>
+<tr class="row-even"><td><p>.edit_element</p></td>
+<td><p>Reference to edited element</p></td>
+<td><p>Only available during element editing</p></td>
+</tr>
+<tr class="row-odd"><td><p>.recalc_element</p></td>
+<td><p>Reference to element used in project recalculation</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="parameter-params">
+<h4>Parameter <code class="docutils literal notranslate"><span class="pre">params</span></code><a class="headerlink" href="#parameter-params" title="Permalink to this heading"></a></h4>
+<p>The params contain a map of parameter values. It is only filled on element edit and contains the current parameters of the element.</p>
+</section>
+<section id="return-value">
+<h4>Return value<a class="headerlink" href="#return-value" title="Permalink to this heading"></a></h4>
+<p>The function must return a map containing the new element parameters.</p>
+<p>If no map is returned the edit/creation is regarded as aborted by the user.</p>
+</section>
+</section>
+<section id="calculating-a-preview">
+<h3>Calculating a preview<a class="headerlink" href="#calculating-a-preview" title="Permalink to this heading"></a></h3>
+<p>To calculate a preview, the <code class="docutils literal notranslate"><span class="pre">context.calc()</span></code> function can be invoked. It takes the following parameters:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Role</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>params</p></td>
+<td><p>A map of parameters to be used for preview calculation</p></td>
+</tr>
+<tr class="row-odd"><td><p>stages</p></td>
+<td><p>Optional: A list of stage indices to calculate a preview in</p></td>
+</tr>
+<tr class="row-even"><td><p>dialog</p></td>
+<td><p>Optional: A script dialog to message when preview calculation was successful.<br>The dialog event handler will receive the event string ‘calculated’</p></td>
+</tr>
+</tbody>
+</table>
+<p>A call to this function will return immediately. The calculation is invoked asynchronously in a separate python instance.</p>
+</section>
 </section>
 <section id="the-calculation-function">
 <h2>The <code class="docutils literal notranslate"><span class="pre">calculation</span></code> function<a class="headerlink" href="#the-calculation-function" title="Permalink to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This content was previously part of the GOM Connect. See <a class="reference external" href="https://connect.gom.com/display/GPF/Scripted+Elements+API+Reference">here</a>.</p>
-<p>Content will be migrated shortly.</p>
-</div>
-<p>Notes:</p>
+<p>💡 <strong>Notes:</strong></p>
 <ul class="simple">
 <li><p>It is not possible to call script commands or read tokens from within this function. (Do not call <code class="docutils literal notranslate"><span class="pre">gom.app.project....</span></code>)</p></li>
 <li><p>The function should loop over all stages to be calculated and set a computation result  for each stage.</p></li>
 </ul>
+<section id="id1">
+<h3>Signature<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculation</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+</pre></div>
+</div>
+<section id="id2">
+<h4>Parameter <code class="docutils literal notranslate"><span class="pre">context</span></code><a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<p>The context contains the following members:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Role</p></th>
+<th class="head"><p>Remarks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><pre>.data[stage]</pre></p></td>
+<td><p>UDE data storage access</p></td>
+<td><p>see below</p></td>
+</tr>
+<tr class="row-odd"><td><p><pre>.stages</pre></p></td>
+<td><p>Current indices</p></td>
+<td><p>List containing stage indices to calculate</p></td>
+</tr>
+<tr class="row-even"><td><p><pre>.total_stages</pre></p></td>
+<td><p>Number of stages</p></td>
+<td><p>Valid stage indices are 0 to total_stages - 1</p></td>
+</tr>
+<tr class="row-odd"><td><p><pre>.result[stage]</pre></p></td>
+<td><p>Directly set preview</p></td>
+<td><p>see below</p></td>
+</tr>
+<tr class="row-even"><td><p><pre>.is_new_element</pre></p></td>
+<td><p>Flag if element creation</p></td>
+<td><p>True on (edit) creation, false on recalc</p></td>
+</tr>
+<tr class="row-odd"><td><p><pre>.name</pre></p></td>
+<td><p>Name of created element</p></td>
+<td><p>Read/write attribute<br>Ignored on recalc and script execution</p></td>
+</tr>
+<tr class="row-even"><td><p><pre>.error[stage]</pre></p></td>
+<td><p>Used to assign an error text</p></td>
+<td><p>Will set the element to not computed in the given stage</p></td>
+</tr>
+<tr class="row-odd"><td><p><pre>.edit_element</pre></p></td>
+<td><p>Reference to edited element</p></td>
+<td><p>Only available during element editing</p></td>
+</tr>
+<tr class="row-even"><td><p><pre>.recalc_element</pre></p></td>
+<td><p>Reference to element being computed</p></td>
+<td><p>Only available during non-interactive calculation</p></td>
+</tr>
+<tr class="row-odd"><td><p><pre>.progress_stages_computing</pre></p></td>
+<td><p>Number of stages which have started to compute</p></td>
+<td><p>Used to display progress information</p></td>
+</tr>
+<tr class="row-even"><td><p><pre>.progress_stages_total</pre></p></td>
+<td><p>Number of stages which have to be computed</p></td>
+<td><p>Used to display progress information</p></td>
+</tr>
+</tbody>
+</table>
+<section id="attribute-context-data">
+<h5>Attribute <code class="docutils literal notranslate"><span class="pre">context.data[]</span></code><a class="headerlink" href="#attribute-context-data" title="Permalink to this heading"></a></h5>
+<p>The context.data is a list allowing to read or write additional data. The list is indexed with a stage index. The additional data is stored within the project, so the gom application must be able to serialize the provided data.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="attribute-context-result">
+<h5>Attribute <code class="docutils literal notranslate"><span class="pre">context.result[]</span></code><a class="headerlink" href="#attribute-context-result" title="Permalink to this heading"></a></h5>
+<p>This is a write only list used to set computation results. The context.result[] should be set for each state index listed in context.stages.</p>
+<p>The format to write must match the type of the script element. For available result types, see <a class="reference internal" href="#scripted-actuals-return-values">Scripted actuals - Return values</a> and <a class="reference internal" href="#scripted-checks-return-values">Scripted checks - Return values</a>.</p>
+</section>
+</section>
+<section id="id3">
+<h4>Return value<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
+<p>On success the function must return True, otherwise False.</p>
+</section>
+</section>
 </section>
 <section id="scripted-actuals-return-values">
 <h2>Scripted actuals - Return values<a class="headerlink" href="#scripted-actuals-return-values" title="Permalink to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This content was previously part of the GOM Connect. See <a class="reference external" href="https://connect.gom.com/display/GPF/Scripted+Actual+Elements">here</a>.</p>
-<p>Content will be migrated shortly.</p>
-</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dialog Choice</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>Result format</p></th>
+<th class="head"><p>Result description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Point</p></td>
+<td><p>Plain 3D point</p></td>
+<td><p><pre>result = (x,y,z)</pre><br><pre>result = gom.Vec3D</pre></p></td>
+<td><p>Point coordinate</p></td>
+</tr>
+<tr class="row-odd"><td><p>Distance</p></td>
+<td><p>Two point distance</p></td>
+<td><p><pre>result = { ‘point1’: (x,y,z), ‘point2’: (x,y,z) }</pre><br><pre>result = { ‘point1’: gom.Vec3D, ‘point2’: gom.Vec3D }</pre></p></td>
+<td><p>Start and end point of distance</p></td>
+</tr>
+<tr class="row-even"><td><p>Value Element</p></td>
+<td><p>Plain value (only real values supported)</p></td>
+<td><p><pre>result = x</pre></p></td>
+<td><p>any double value</p></td>
+</tr>
+<tr class="row-odd"><td><p>Circle</p></td>
+<td><p>2D Circle with direction</p></td>
+<td><p><pre>result = { ‘center’ : gom.Vec3D, ‘direction’ : gom.Vec3D, ‘radius’ : double }</pre></p></td>
+<td><p>A center point, direction vector and radius (double)</p></td>
+</tr>
+<tr class="row-even"><td><p>Curve</p></td>
+<td><p>3D polyline</p></td>
+<td><p><pre>result = [ { ‘points’: [gom.Vec3D, gom.Vec3D, …] } ]</pre></p></td>
+<td><p>A curve a made up by an array of subcurves. Each subcurve is a polyline.<br>A closed curve will be created, if first point = last point.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Surface Curve</p></td>
+<td><p>3D polyline with normals</p></td>
+<td><p><pre>result = [ { ‘points’: [ gom.Vec3D, gom.Vec3D, … ], ‘normals’: [(x,y,z)] } ]</pre></p></td>
+<td><p>Like a curve with additional normal data.</p></td>
+</tr>
+<tr class="row-even"><td><p>Section</p></td>
+<td><p>3D polyline with normals</p></td>
+<td><p><pre>result = {‘curves’: [{‘points’: [(x, y, z), …], ‘normals’: [(x, y, z), …]}, …], ‘plane’ : {‘normal’ : (x, y, z), ‘distance’ : float}, ‘cylinder’: …, ‘cone’ : …}</pre></p></td>
+<td><p>Parameters ‘plane’, ‘cylinder’ and ‘cone’ are optional. They denote the creation geometry. You can only use one of them. Argument is a corresponding trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Point Cloud</p></td>
+<td><p>Set of 3D points</p></td>
+<td><p><pre>result = { ‘points’ :  [ gom.Vec3D, gom.Vec3D, … ] , ‘normals’ : [ gom.Vec3D, gom.Vec3D, … ] }</pre></p></td>
+<td><p>A set of points. The ‘normals ‘attribute is optional.</p></td>
+</tr>
+<tr class="row-even"><td><p>Surface</p></td>
+<td><p>Mesh</p></td>
+<td><p><pre>result = { ‘vertices’: [ (x,y,z) ], ‘triangles’:  [ (v0,v1,v2) ] }</pre></p></td>
+<td><p>Defines a triangulation. The vertices attribute points defines all points. The triangle attribute defines triangles between these points using indices into the vertex list.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cone</p></td>
+<td><p>Cone</p></td>
+<td><p><pre>result = Reference</pre><br><pre>result = { ‘normal’ : gom.Vec3d, ‘distance’: float }</pre><br><pre>result = { ‘target’: Reference, ‘offset’: float }</pre><br>⚠️ <strong>The creation of planes currently does not work.</strong><br><strong>Workaround:</strong> set the result to <pre>{‘default’ : {‘normal’ : gom.Vec3d, ‘distance’: float} }</pre></p></td>
+<td><p>Accepts any Plane Trait</p></td>
+</tr>
+<tr class="row-even"><td><p>Cylinder</p></td>
+<td><p>Cylinder</p></td>
+<td><p><pre>result = Reference</pre><br><pre>result = { ‘point’: gom.Vec3d, ‘radius’: float, ‘direction’: gom.Vec3d, ‘inner’ : bool } # This does not work!</pre><br>⚠️ <strong>Workaround:</strong> set the result to <pre>{‘default’ : {‘point’: gom.Vec3d, ‘radius’: float, ‘direction’: gom.Vec3d, ‘inner’ : bool} }</pre></p></td>
+<td><p>Accepts any Cylinder Trait</p></td>
+</tr>
+<tr class="row-odd"><td><p>Plane</p></td>
+<td><p>Plane</p></td>
+<td><p><pre>result = Reference</pre><br><pre>result = { ‘point1’: gom.Vec3d, ‘radius1’: float, ‘point2’: gom.Vec3d, ‘radius2’: float } # This does not work!</pre><br>⚠️ <strong>Workaround:</strong> set the result to <pre>{‘default’ : {‘point1’: gom.Vec3d, ‘radius1’: float, ‘point2’: gom.Vec3d, ‘radius2’: float} }</pre></p></td>
+<td><p>Accepts any Cone Trait</p></td>
+</tr>
+<tr class="row-even"><td><p>Volume defects</p></td>
+<td><p>Volume defects element</p></td>
+<td><p><pre>result = {<br>   ‘vertices’: [ np.array((x,y,z), (x,y,z), … ), np.array((x,y,z), (x,y,z), …), … ],<br>   ‘triangles’:  [ np.array((v0,v1,v2), (v0,v1,v2), … ), np.array((v0,v1,v2), (v0,v1,v2), …), … ],<br>   ‘outer_hull’ : gom.Reference     # optional OR<br>   ‘outer_hull_vertices’: np.array((x,y,z),…), ‘outer_hull_triangles’: np.array((v0,v1,v2),…) }<br>}</pre></p></td>
+<td><p>A list of meshes defined by vertices and triangles.<p>The vertices attribute is a [python array] – one entry for each defect –  of numpy arrays (np.array) of Vec3d.<p>The triangle attribute defines triangles between the points of each mesh using indices to the vertex lists.<p>The ‘outer_hull’ parameter can optionally be set to a reference of a mesh element of the project. This mesh will be copied and used as an outer hull for the defect element. <strong>Alternatively</strong>, ‘outer_hull_vertices’ and ‘outer_hull_triangles’ can be given as explicit outer hull mesh definition.<p>For an example, see: <a class="reference external" href="https://connect.gom.com/x/B8fVAg">[GOM Connect] How-to: Generate volume defect elements from GOM Scripting</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>2D Volume Defects</p></td>
+<td><p>2D volume defects element of curves<p>needed for the P201 package</p></td>
+<td><p><pre>result = { ‘curves’: [ [gom.Vec3d, gom.Vec3d, …],<br>                       [gom.Vec3d, gom.Vec3d, …],<br>                        … ] }</pre></p></td>
+<td><p>Requires a list/array of lists/arrays of Vec3ds.<p>A list of points represents the polygon (curve) of one 2d volume defect. The list of lists of points represents all 2d volume defects that shall be included in the element.</p></td>
+</tr>
+<tr class="row-even"><td><p>Volume</p></td>
+<td><p>New volume data</p></td>
+<td><p><pre>result = { ‘voxel_data’ : np.array (), ‘transformation’ : (gom.Mat4x4 | gom.Vec3d) }</pre></p></td>
+<td><p>Accepts a numpy array with voxel data and a transformation. <p>The numpy array’s shape denotes the resulting volume shape. The ‘dtype’ can be one of (UINT16, BYTE, INT16, INT16, INT32, UINT32, FLOAT, DOUBLE).<p>The transformation can be a gom.Mat4x4 (affine transformation) or a gom.Vec3d (scaling along x/y/z axis only)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Volume material map</p></td>
+<td><p>Attach material labels to volume element</p></td>
+<td><p><pre>result = {<br>    ‘material_labels_draft’ : np.array (), <br>    ‘material_grey_values_draft’ : [background, material 1, …],<br>    ‘volume_reference_draft’ : Reference<br>}</pre></p></td>
+<td><p>Creates a new volume element copy with attached material labels.<p>First parameter is a numpy array of type UINT8 of the size of the volume. The values are the material index per voxel. Background has Index 0.<p>The second parameter is a list of floating point grey values that are the representative grey values of the background and the materials.<p>The third parameter is a reference to the volume element, to which material labels should be attached.</p></td>
+</tr>
+<tr class="row-even"><td><p>Volume Section</p></td>
+<td><p>Volume section</p></td>
+<td><p><pre>result = { ‘pixel_data’ : np.array (), ‘transformation’ : gom.Mat4x4 }</pre></p></td>
+<td><p>Accepts a numpy array with pixel data and a transformation.<p>The numpy array’s shape denotes the resulting volume section shape. The ‘dtype’ must be FLOAT.<p>The transformation is a gom.Mat4x4 (affine transformation)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Volume Region</p></td>
+<td><p>Volume Region</p></td>
+<td><p><pre>result = {‘volume_element’: Reference,<br>          ‘offset’: gom.Vec3d,<br>          ‘data’: np.array ()}</pre></p></td>
+<td><p>Accepts a numpy array of the region data. The ‘dtype’ must be UINT_8. This array can be smaller than the volume grid.<p>The offset parameter defines the location of the first voxel in the numpy array of the volume region.<p>This scripted element requires specifying a reference to a volume element. This can be a volume or linked volume element.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="scripted-checks-return-values">
 <h2>Scripted checks - Return values<a class="headerlink" href="#scripted-checks-return-values" title="Permalink to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This content was previously part of the GOM Connect. See <a class="reference external" href="https://connect.gom.com/display/GPF/Scripted+Checks">here</a>.</p>
-<p>Content will be migrated shortly.</p>
-</div>
+<p>Scripted Checks extend the concept of scripted actual elements to be able to calculate custom inspections based on python scripts.</p>
+<section id="supported-element-types">
+<h3>Supported Element Types<a class="headerlink" href="#supported-element-types" title="Permalink to this heading"></a></h3>
+<p>The following actual element types are currently supported:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dialog Choice</p></th>
+<th class="head"><p>Comment</p></th>
+<th class="head"><p>Result format</p></th>
+<th class="head"><p>Result description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Scalar</p></td>
+<td><p>Scalar check:<br>A single scalar value is assigned to an element</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">{&quot;nominal&quot;</span> <span class="pre">:</span> <span class="pre">double,</span> <span class="pre">&quot;actual&quot;</span> <span class="pre">:</span> <span class="pre">double,</span> <span class="pre">&quot;reference&quot;</span> <span class="pre">:</span> <span class="pre">gom.Reference</span> <span class="pre">}</span></code></p></td>
+<td><p>A nominal and actual double value are set, and a reference to element which was checked.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scalar Surface</p></td>
+<td><p>Surface check:<br>A scalar deviation value is assigned to each point of a mesh.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">&quot;deviation_values&quot;</span> <span class="pre">:</span> <span class="pre">np.array(dtype=np.float32),</span> <span class="pre">&quot;reference&quot;</span> <span class="pre">:</span> <span class="pre">gom.Reference</span> <span class="pre">}</span></code></p></td>
+<td><p>A list of deviation values for each point of a mesh. The mesh is also set as “reference” parameter.<p>The number of points of the mesh and the “deviation_values” array must match.</p></td>
+</tr>
+<tr class="row-even"><td><p>Scalar Curve</p></td>
+<td><p>Curve check:<br>A scalar deviation value is assigned to each point on a curve.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">&quot;actual_values&quot;</span> <span class="pre">:</span> <span class="pre">double,</span> <span class="pre">'nominal_values':</span> <span class="pre">double,</span> <span class="pre">&quot;reference&quot;</span> <span class="pre">:</span> <span class="pre">gom.Reference}</span></code></p></td>
+<td><p>A list of nominal and actual values for each point of a curve. The deviation values are calculated automatically as a difference between both.<p>The curve is also set as “reference” parameter.<p>The number of points of the curve and the value arrays must match.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 </section>
 
