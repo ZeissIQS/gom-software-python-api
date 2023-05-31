@@ -22,7 +22,9 @@ exclude_patterns = ['README.md']
 myst_enable_extensions = [
   'colon_fence',
   'fieldlist',
-  'replacements' 
+  'replacements',
+  'deflist',
+  'attrs_inline'
 ]
 
 myst_heading_anchors = 4
