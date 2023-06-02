@@ -17,7 +17,9 @@ You can create a new, empty project as follows:
 gom.script.sys.create_project ()
 ```
 
-This way, a project in the default workflow  (part-based) is created. For the legacy workflow (part-less), please refer to [Legacy projects \(part-less\)](#legacy-projects-part-less)
+```{note}
+💡 This way, a project in the default workflow  (part-based) is created. For the legacy workflow (part-less), please refer to [Legacy projects \(part-less\)](#legacy-projects-part-less)
+```
 
 ## Creating parts
 
