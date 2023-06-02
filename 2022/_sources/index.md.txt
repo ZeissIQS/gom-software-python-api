@@ -31,6 +31,7 @@ If you are new to add-ons, we recommend following our how-to guides to get you s
    howtos/scripted_elements/scripted_elements_toc
    howtos/adding_workspaces_to_packages/adding_workspaces_to_packages
    howtos/using_vscode_editor/using_vscode_editor
+   howtos/localization/localization
    howtos/testing_addons/testing_addons
 ```
 
