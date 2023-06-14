@@ -21,7 +21,7 @@ However, using VS Code or another text editor, the corresponding `.metainfo` fil
 
 If you use this approach, and follow our [icon guidelines](../../howtos/adding_workspaces_to_packages/adding_workspaces_to_packages.md#icon-guidelines), the icons get inverted in dark themes automatically.
 
-![](menu_icon_darkbg.jpg)
+![](menu_icon_light_bg.png)
 
 ## Related
 
