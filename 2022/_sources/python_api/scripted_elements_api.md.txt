@@ -330,18 +330,19 @@ result = {
 result = { 'pixel_data' : np.array (), 'transformation' : gom.Mat4x4 }
 ```
 
-### Volume Region
+% New in SW2023
+%### Volume Region
+%
+%:Element Type: Volume Region
+%:Result: Accepts a numpy array of the region data. The 'dtype' must be UINT_8. This array can be smaller than the volume grid.<p>The offset parameter defines %the location of the first voxel in the numpy array of the volume region.<p>This scripted element requires specifying a reference to a volume element. This can %be a volume or linked volume element.%
 
-:Element Type: Volume Region
-:Result: Accepts a numpy array of the region data. The 'dtype' must be UINT_8. This array can be smaller than the volume grid.<p>The offset parameter defines the location of the first voxel in the numpy array of the volume region.<p>This scripted element requires specifying a reference to a volume element. This can be a volume or linked volume element.
-
-```{code-block} python
-result = {
-  'volume_element': Reference,
-  'offset': gom.Vec3d,
-  'data': np.array ()
-}
-```
+%```{code-block} python
+%result = {
+%  'volume_element': Reference,
+%  'offset': gom.Vec3d,
+%  'data': np.array ()
+%}
+%```
 
 % ### Element type: Point
 

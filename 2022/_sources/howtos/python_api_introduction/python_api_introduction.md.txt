@@ -1,5 +1,7 @@
 # Python API introduction
 
+## Introduction to Python scripting
+
 See [Introduction to Python Scripting](https://techguide.gom.com/en/gom-software-2022/article/introduction_to_python_scripting.html) if you are new to Python or the GOM Software Python interface. 
 
 ## Creating projects

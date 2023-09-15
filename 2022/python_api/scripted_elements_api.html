@@ -106,7 +106,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#volume">Volume</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#volume-material-map">Volume material map</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#volume-section">Volume Section</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#volume-region">Volume Region</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#scripted-checks-return-values">Scripted checks - Return values</a><ul>
@@ -641,24 +640,6 @@
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;pixel_data&#39;</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">(),</span> <span class="s1">&#39;transformation&#39;</span> <span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Mat4x4</span> <span class="p">}</span>
-</pre></div>
-</div>
-</section>
-<section id="volume-region">
-<h3>Volume Region<a class="headerlink" href="#volume-region" title="Permalink to this heading"></a></h3>
-<dl class="myst field-list simple">
-<dt class="field-odd">Element Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Volume Region</p>
-</dd>
-<dt class="field-even">Result<span class="colon">:</span></dt>
-<dd class="field-even"><p>Accepts a numpy array of the region data. The ‘dtype’ must be UINT_8. This array can be smaller than the volume grid.<p>The offset parameter defines the location of the first voxel in the numpy array of the volume region.<p>This scripted element requires specifying a reference to a volume element. This can be a volume or linked volume element.</p>
-</dd>
-</dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">&#39;volume_element&#39;</span><span class="p">:</span> <span class="n">Reference</span><span class="p">,</span>
-  <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span>
-  <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">()</span>
-<span class="p">}</span>
 </pre></div>
 </div>
 </section>
