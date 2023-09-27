@@ -247,13 +247,6 @@ If you specify `radius1` > `radius2` in the creation parameters, [`point1`; `rad
 ```{code-block} Python
 result = Reference
 
-# This does not work!
-result = { 'point': gom.Vec3d, 'radius': float, 'direction': gom.Vec3d, 'inner' : bool }
-```
-
-:::{caution}
-**Workaround:** set the result to
-```{code-block} Python
 result = {'default' : {'point': gom.Vec3d, 'radius': float, 'direction': gom.Vec3d, 'inner' : bool} }
 ```
 % :::
