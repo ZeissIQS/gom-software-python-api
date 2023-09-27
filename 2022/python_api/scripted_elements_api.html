@@ -100,6 +100,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#surface">Surface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cone">Cone</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cylinder">Cylinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volume-defects">Volume defects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d-volume-defects">2D Volume Defects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volume">Volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volume-material-map">Volume material map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volume-section">Volume Section</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scripted-checks-return-values">Scripted checks - Return values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supported-element-types">Supported Element Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scalar">Scalar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scalar-surface">Scalar Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scalar-curve">Scalar Curve</a></li>
 </ul>
 </li>
 </ul>
@@ -499,17 +511,12 @@
 </dl>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">Reference</span>
 
-<span class="c1"># This does not work!</span>
-<span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;point&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="s1">&#39;radius&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="s1">&#39;inner&#39;</span> <span class="p">:</span> <span class="nb">bool</span> <span class="p">}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;default&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;point&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="s1">&#39;radius&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="s1">&#39;inner&#39;</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">}</span> <span class="p">}</span>
 </pre></div>
 </div>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p><strong>Workaround:</strong> set the result to</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;default&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;point&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="s1">&#39;radius&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="s1">&#39;inner&#39;</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">}</span> <span class="p">}</span>
-</pre></div>
-</div>
-<h3 class="rubric" id="volume-defects">Volume defects</h3>
+</section>
+<section id="volume-defects">
+<h3>Volume defects<a class="headerlink" href="#volume-defects" title="Permalink to this heading"></a></h3>
 <dl class="myst field-list simple">
 <dt class="field-odd">Element Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Volume defects</p>
@@ -526,7 +533,9 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<h3 class="rubric" id="d-volume-defects">2D Volume Defects</h3>
+</section>
+<section id="d-volume-defects">
+<h3>2D Volume Defects<a class="headerlink" href="#d-volume-defects" title="Permalink to this heading"></a></h3>
 <dl class="myst field-list simple">
 <dt class="field-odd">Element Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>2D volume defects element of curves<p>needed for the P201 package</p>
@@ -542,7 +551,9 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<h3 class="rubric" id="volume">Volume</h3>
+</section>
+<section id="volume">
+<h3>Volume<a class="headerlink" href="#volume" title="Permalink to this heading"></a></h3>
 <dl class="myst field-list simple">
 <dt class="field-odd">Element Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>New volume data</p>
@@ -554,7 +565,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;voxel_data&#39;</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">(),</span> <span class="s1">&#39;transformation&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="n">gom</span><span class="o">.</span><span class="n">Mat4x4</span> <span class="o">|</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">)</span> <span class="p">}</span>
 </pre></div>
 </div>
-<h3 class="rubric" id="volume-material-map">Volume material map</h3>
+</section>
+<section id="volume-material-map">
+<h3>Volume material map<a class="headerlink" href="#volume-material-map" title="Permalink to this heading"></a></h3>
 <dl class="myst field-list simple">
 <dt class="field-odd">Element Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Attach material labels to volume element</p>
@@ -570,7 +583,9 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<h3 class="rubric" id="volume-section">Volume Section</h3>
+</section>
+<section id="volume-section">
+<h3>Volume Section<a class="headerlink" href="#volume-section" title="Permalink to this heading"></a></h3>
 <dl class="myst field-list simple">
 <dt class="field-odd">Element Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Volume Section</p>
@@ -582,11 +597,17 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;pixel_data&#39;</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">(),</span> <span class="s1">&#39;transformation&#39;</span> <span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Mat4x4</span> <span class="p">}</span>
 </pre></div>
 </div>
-<h2 class="rubric" id="scripted-checks-return-values">Scripted checks - Return values</h2>
+</section>
+</section>
+<section id="scripted-checks-return-values">
+<h2>Scripted checks - Return values<a class="headerlink" href="#scripted-checks-return-values" title="Permalink to this heading"></a></h2>
 <p>Scripted Checks extend the concept of scripted actual elements to be able to calculate custom inspections based on python scripts.</p>
-<h3 class="rubric" id="supported-element-types">Supported Element Types</h3>
+<section id="supported-element-types">
+<h3>Supported Element Types<a class="headerlink" href="#supported-element-types" title="Permalink to this heading"></a></h3>
 <p>The following element types are currently supported:</p>
-<h3 class="rubric" id="scalar">Scalar</h3>
+</section>
+<section id="scalar">
+<h3>Scalar<a class="headerlink" href="#scalar" title="Permalink to this heading"></a></h3>
 <dl class="myst field-list simple">
 <dt class="field-odd">Element Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Scalar check:<br>A single scalar value is assigned to an element</p>
@@ -598,7 +619,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nominal&quot;</span> <span class="p">:</span> <span class="n">double</span><span class="p">,</span> <span class="s2">&quot;actual&quot;</span> <span class="p">:</span> <span class="n">double</span><span class="p">,</span> <span class="s2">&quot;reference&quot;</span> <span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Reference</span> <span class="p">}</span>
 </pre></div>
 </div>
-<h3 class="rubric" id="scalar-surface">Scalar Surface</h3>
+</section>
+<section id="scalar-surface">
+<h3>Scalar Surface<a class="headerlink" href="#scalar-surface" title="Permalink to this heading"></a></h3>
 <dl class="myst field-list simple">
 <dt class="field-odd">Element Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Surface check:<br>A scalar deviation value is assigned to each point of a mesh.</p>
@@ -610,7 +633,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;deviation_values&quot;</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="s2">&quot;reference&quot;</span> <span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Reference</span> <span class="p">}</span>
 </pre></div>
 </div>
-<h3 class="rubric" id="scalar-curve">Scalar Curve</h3>
+</section>
+<section id="scalar-curve">
+<h3>Scalar Curve<a class="headerlink" href="#scalar-curve" title="Permalink to this heading"></a></h3>
 <dl class="myst field-list simple">
 <dt class="field-odd">Element Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Curve check:<br>A scalar deviation value is assigned to each point on a curve.</p>
@@ -621,7 +646,6 @@
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;actual_values&quot;</span> <span class="p">:</span> <span class="n">double</span><span class="p">,</span> <span class="s1">&#39;nominal_values&#39;</span><span class="p">:</span> <span class="n">double</span><span class="p">,</span> <span class="s2">&quot;reference&quot;</span> <span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Reference</span><span class="p">}</span>
 </pre></div>
-</div>
 </div>
 </section>
 </section>
