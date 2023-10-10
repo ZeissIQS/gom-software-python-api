@@ -174,8 +174,8 @@ result = [ { 'points': [gom.Vec3D, gom.Vec3D, ...] } ]
 ```{code-block} python
 result = {
   'default': [
-    {'points': [gom.Vec3d, gom.Vec3d, …], 'normals': [gom.Vec3d, gom.Vec3d, …]},
-    {…}, 
+    {'points': [gom.Vec3d, gom.Vec3d, …], 'normals': [gom.Vec3d, gom.Vec3d, ...]},
+    {...}, 
     ...
   ]
 } 
