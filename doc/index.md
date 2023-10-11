@@ -4,9 +4,9 @@ myst:
       "description": "Introduction to the Python API for extending GOM Inspect 2022 with Packages/Add-ons"
       "keywords": "Metrology, GOM Inspect, Python API, GOM API, Scripting, Packages, Add-ons, How-tos"
 ---
-# Add-On Documentation
+# GOM Inspect Add-On Development Documentation
 
-Welcome to the Add-On documentation. With Add-Ons, you will be able to customize and extend the functionality of your GOM Inspect software. 
+Welcome to the GOM Inspect Add-On development documentation. With Add-Ons, you will be able to customize and extend the functionality of your GOM Inspect software. 
 You can include several template configurations from the software, as well as completely new workflows programmed in python.
 
 ```{note}
