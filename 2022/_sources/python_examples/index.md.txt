@@ -1,4 +1,3 @@
-Added metadata:
 ---
 myst:
    html_meta:
