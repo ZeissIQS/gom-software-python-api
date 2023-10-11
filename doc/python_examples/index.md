@@ -1,3 +1,10 @@
+Added metadata:
+---
+myst:
+   html_meta:
+      "description": "Examples for using the GOM Inspect 2023 Add-on Python API"
+      "keywords": "Metrology, GOM Inspect, Python API, GOM API, Scripting, Packages, Add-ons, Examples"
+---
 # Overview
 
 Welcome to the Python API Examples. Here you can find the documentation of the examples which are provided by the
