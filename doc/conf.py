@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Add-On Documentation'
-copyright = '2022, Carl Zeiss GOM Metrology GmbH'
+copyright = '2023, Carl Zeiss GOM Metrology GmbH'
 author = 'Carl Zeiss GOM Metrology GmbH'
 
 # -- General configuration ---------------------------------------------------
@@ -49,3 +49,11 @@ favicons = [
         "type": "image/png",
     }
 ]
+
+# Source: https://brand.zeiss.com/cmsPublic/brandportal/basic-design-elements/logo-tagline.html
+html_logo = {
+    "rel": "logo",
+    "sizes": "80x80",
+    "static-file": "zeiss-logo-rgb.png", # => use `_static/zeiss-logo-rgb.png`
+    "type": "image/png"
+}
