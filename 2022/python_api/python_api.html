@@ -6,7 +6,7 @@
 <meta content="Metrology, GOM Inspect, Python API, GOM API, Scripting, Packages, Add-ons, Specification, Documentation" name="keywords" />
     <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python API functions &mdash; Add-On Documentation  documentation</title>
+  <title>GOM Inspect Python API documentation &mdash; Add-On Documentation  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="canonical" href="https://zeissiqs.github.io/gom-software-python-api/2022/python_api/python_api.html" />
@@ -49,7 +49,7 @@
               <p class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../howtos/environments_for_python_scripts/environments_for_python_scripts.html">Environments for python scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../howtos/python_api_introduction/python_api_introduction.html">Python API introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/python_api_introduction/python_api_introduction.html">GOM Inspect Python API introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../howtos/python_api_introduction/script_dialogs_introduction.html">Using script dialogs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../howtos/python_api_introduction/creating_wizard_dialogs.html">Creating wizard dialogs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../howtos/python_api_introduction/using_script_resources.html">Using script resources</a></li>
@@ -72,8 +72,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python API Specification</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python API functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basics">Basics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GOM Inspect Python API documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#image-processing">Image processing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gom-api-project">gom.api.project</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#gom.api.project.get_image_aquisition"><code class="docutils literal notranslate"><span class="pre">gom.api.project.get_image_aquisition()</span></code></a></li>
@@ -116,7 +115,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Python API functions</li>
+      <li class="breadcrumb-item active">GOM Inspect Python API documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/python_api/python_api.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -126,19 +125,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="python-api-functions">
-<h1>Python API functions<a class="headerlink" href="#python-api-functions" title="Permalink to this heading"></a></h1>
-<section id="basics">
-<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This document describes the emerging GOM Python API.</p>
-</div>
+  <section id="gom-inspect-python-api-documentation">
+<h1>GOM Inspect Python API documentation<a class="headerlink" href="#gom-inspect-python-api-documentation" title="Permalink to this heading"></a></h1>
+<p>Welcome to the GOM Inspect Python API documentation. Here you can find a detailed documentation of a subset of the Add-on programming specification. Please bear in mind, that recording commands with the script editor can be used to add new functions to your script.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The now preliminary API is currently under heavy development and will change massively in the near future.</p>
 </div>
-</section>
 <section id="image-processing">
 <h2>Image processing<a class="headerlink" href="#image-processing" title="Permalink to this heading"></a></h2>
 <p>Image related functions can be used to query images from the measurements of a project. This is not done directly, but via an ‘image acquisition’ object which acts as a proxy between the image storing data structured and the functions which can be used to process the image data.</p>

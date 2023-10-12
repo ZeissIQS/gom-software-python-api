@@ -4,13 +4,9 @@ myst:
       "description": "GOM Inspect 2022 Add-on Python API Specification"
       "keywords": "Metrology, GOM Inspect, Python API, GOM API, Scripting, Packages, Add-ons, Specification, Documentation"
 ---
-# Python API functions
+# GOM Inspect Python API documentation
 
-## Basics
-
-```{note}
-This document describes the emerging GOM Python API.
-```
+Welcome to the GOM Inspect Python API documentation. Here you can find a detailed documentation of a subset of the Add-on programming specification. Please bear in mind, that recording commands with the script editor can be used to add new functions to your script.
 
 ```{important}
 The now preliminary API is currently under heavy development and will change massively in the near future.
