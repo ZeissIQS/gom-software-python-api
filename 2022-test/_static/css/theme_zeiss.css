@@ -6,10 +6,10 @@
 /* Use font "ZEISS Frutiger Next W1G" */
 @font-face {
 	font-family: "Frutiger Next";
-	src: url("_static/fonts/ZEISS-Frutiger-Next-W02-Regular.woff2") format("woff2"),
-	url("_static/fonts/ZEISS-Frutiger-Next-W02-Regular-Italic.woff2") format("woff2"),
-    url("_static/fonts/ZEISS-Frutiger-Next-W02-Medium.woff2") format("woff2"),
-	url("_static/fonts/ZEISS-Frutiger-Next-W02-Bold.woff2") format("woff2");
+	src: url("../fonts/ZEISS-Frutiger-Next-W02-Regular.woff2") format("woff2"),
+	url("../fonts/ZEISS-Frutiger-Next-W02-Regular-Italic.woff2") format("woff2"),
+    url("../fonts/ZEISS-Frutiger-Next-W02-Medium.woff2") format("woff2"),
+	url("../fonts/ZEISS-Frutiger-Next-W02-Bold.woff2") format("woff2");
 }
 
 :root {
