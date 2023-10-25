@@ -1,0 +1,20 @@
+/* Override some styles to match ZEISS branding */
+
+/* Based on Read the Docs theme */
+@import 'theme.css';
+
+/* Changed from #298069 -> ZEISS Ultradark Gray */ 
+.wy-side-nav-search {
+    /* background: #343131; */
+    background: #32373E;
+}
+
+/* Changed from #fcfcfc */
+.wy-nav-content-wrap, .wy-body-for-nav, .wy-nav-content, .wy-dropdown-menu {
+    background: #ffffff;
+}
+
+/* Changed from #6ab0de -> ZEISS Saphire */
+.admonition-title {
+    background: #4C6BB1;
+}
