@@ -3,6 +3,11 @@
 /* Based on Read the Docs theme */
 @import 'theme.css';
 
+/* Changed from #2980b9 -> ZEISS Azure */
+a {
+    color: #0072EF;
+}
+
 /* Changed from #298069 -> ZEISS Ultradark Gray */ 
 .wy-side-nav-search {
     /* background: #343131; */
@@ -17,4 +22,19 @@
 /* Changed from #6ab0de -> ZEISS Saphire */
 .rst-content .note .admonition-title {
     background: #4C6BB1;
+}
+
+/* Changed from #e7f2fa -> ZEISS Ultralight Gray */
+.rst-content .note {
+    background: #DCE3E9;
+}
+
+/* Changed from #1abc9c -> ZEISS Green */
+.rst-content .important .admonition-title {
+    background: #1E8565;
+}
+
+/* Changed from #dbfaf4 -> ZEISS Ultralight Gray */
+.rst-content .important {
+    background: #DCE3E9;
 }
