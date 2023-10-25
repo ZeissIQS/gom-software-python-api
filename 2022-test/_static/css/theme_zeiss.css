@@ -52,6 +52,6 @@ a:visited {
 }
 
 /* Changed from #f8f8f8 -> ZEISS Semiwhite Gray */
-body {
+pre {
     background: #F2F5F8;
 }
