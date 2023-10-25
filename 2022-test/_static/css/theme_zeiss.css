@@ -8,6 +8,12 @@ a {
     color: #0072EF;
 }
 
+/*
+a:visited {
+    color: #9b59b6;
+}
+*/
+
 /* Changed from #298069 -> ZEISS Ultradark Gray */ 
 .wy-side-nav-search {
     /* background: #343131; */
@@ -43,4 +49,9 @@ a {
 /* Changed from #e74c3c -> ZEISS Purple Red */
 .rst-content code.literal {
     color: #A70240;
+}
+
+/* Changed from #f8f8f8 -> ZEISS Semiwhite Gray */
+body {
+    background: #F2F5F8;
 }
