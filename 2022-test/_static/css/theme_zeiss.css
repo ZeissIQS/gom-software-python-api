@@ -15,6 +15,6 @@
 }
 
 /* Changed from #6ab0de -> ZEISS Saphire */
-.admonition-title {
+.rst-content .note .admonition-title {
     background: #4C6BB1;
 }
