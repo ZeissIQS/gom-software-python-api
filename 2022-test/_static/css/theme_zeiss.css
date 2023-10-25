@@ -30,11 +30,17 @@ a {
 }
 
 /* Changed from #1abc9c -> ZEISS Green */
-.rst-content .important .admonition-title {
+.rst-content .important .admonition-title, .rst-content .hint .admonition-title {
     background: #1E8565;
 }
 
 /* Changed from #dbfaf4 -> ZEISS Ultralight Gray */
-.rst-content .important {
+.rst-content .important, .rst-content .hint {
     background: #DCE3E9;
+}
+
+
+/* Changed from #e74c3c -> ZEISS Purple Red */
+.rst-content code.literal {
+    color: #A70240;
 }
