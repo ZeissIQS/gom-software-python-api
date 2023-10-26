@@ -26,9 +26,9 @@ a {
     color: #0072EF;
 }
 
-/* Changed from #9b59b6 -> ZEISS Aqua */
+/* Changed from #9b59b6 -> ZEISS Saphire */
 a:visited {
-    color: #244A86;
+    color: #4C6BB1;
 }
 
 /* Menu section text, changed from #55a5d9 -> ZEISS Sky Blue, from 85% -> 100% */
@@ -49,7 +49,6 @@ a:visited {
 
 /* Changed from #298069 -> ZEISS Ultradark Gray */ 
 .wy-side-nav-search {
-    /* background: #343131; */
     background: #32373E;
 }
 
