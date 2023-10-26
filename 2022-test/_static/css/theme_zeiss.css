@@ -18,6 +18,7 @@
 
 html, body, .rst-content .toctree-wrapper>p.caption, h1, h2, h3, h4, h5, h6, legend {
     font-family: var(--font-family-frutiger);
+    color: #000000; /* was #404040 */
 }
 
 /* Changed from #2980b9 -> ZEISS Azure */
