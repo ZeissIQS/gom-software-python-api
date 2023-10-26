@@ -89,12 +89,12 @@ a:visited {
 }
 
 /* Changed from #6ab0de -> ZEISS Saphire */
-.rst-content .note .admonition-title {
+.rst-content .note .admonition-title, .rst-content .seealso .admonition-title {
     background: #4C6BB1;
 }
 
 /* Changed from #e7f2fa -> ZEISS Ultralight Gray */
-.rst-content .note {
+.rst-content .note, .rst-content .seealso {
     background: #DCE3E9;
 }
 
