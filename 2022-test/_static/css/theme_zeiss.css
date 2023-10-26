@@ -50,7 +50,12 @@ a:visited {
 /* Changed from #298069 -> ZEISS Ultradark Gray */ 
 .wy-side-nav-search {
     /* background: #343131; */
-    background: #32373E;
+    background: #000000;
+}
+
+/* Changed from #343131 -> ZEISS Black */
+.wy-nav-side {
+    background: #000000;
 }
 
 /* Menu level 1, changed from #d9d9d9 -> ZEISS White */
@@ -78,13 +83,6 @@ a:visited {
 .wy-menu-vertical li.current a:hover, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover {
     background: #0072EF;
 }
-
-/*
-.wy-nav-side {
-    color: #9b9b9b;
-    background: #343131;
-}
-*/
 
 /* Changed from #fcfcfc */
 .wy-nav-content-wrap, .wy-body-for-nav, .wy-nav-content, .wy-dropdown-menu {
