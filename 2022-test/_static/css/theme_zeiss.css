@@ -32,9 +32,10 @@ a:visited {
 }
 */
 
-/* Menu section text, changed from #55a5d9 -> ZEISS Cyan */
+/* Menu section text, changed from #55a5d9 -> ZEISS Cyan -> ZEISS Sky Blue */
 .wy-menu-vertical p.caption {
-    color: #008BD0;
+    /* color: #008BD0; */
+    color: #6AB0E2;
 }
 
 /* Menu text, changed from #404040 to ZEISS Black */
