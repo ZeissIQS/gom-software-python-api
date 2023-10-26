@@ -118,3 +118,14 @@ a:visited {
 pre {
     background: #F2F5F8;
 }
+
+/* Changed from #3D7B7B (increased contrast) */
+.highlight .c1 {
+    color: #2D6B6B;
+}
+
+/* Changed from #AA22FF (increased contrast) */
+.highlight .ow {
+    color: #9A12EF;
+    font-weight: bold;
+}
