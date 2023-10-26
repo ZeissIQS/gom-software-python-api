@@ -109,12 +109,12 @@ a:visited {
 }
 
 /* Changed from #f0b37e -> ZEISS Bright Orange Neon */
-.rst-content .warning .admonition-title {
+.rst-content .warning .admonition-title, .rst-content .attention .admonition-title {
     background: #E71E1E;
 }
 
 /* Changed from # #ffedcc -> ZEISS Ultralight Gray */
-.rst-content .warning {
+.rst-content .warning, .rst-content .attention {
     background: #DCE3E9;
 }
 
