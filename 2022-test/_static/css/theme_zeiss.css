@@ -50,12 +50,12 @@ a:visited {
 /* Changed from #298069 -> ZEISS Ultradark Gray */ 
 .wy-side-nav-search {
     /* background: #343131; */
-    background: #000000;
+    background: #32373E;
 }
 
-/* Changed from #343131 -> ZEISS Black */
+/* Changed from #343131 -> ZEISS Ultradark Gray */
 .wy-nav-side {
-    background: #000000;
+    background: #32373E;
 }
 
 /* Menu level 1, changed from #d9d9d9 -> ZEISS White */
