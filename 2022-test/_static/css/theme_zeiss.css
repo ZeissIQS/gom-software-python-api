@@ -48,8 +48,8 @@ a:visited {
 }
 
 
-/* Changed from #d6d6d6 -> ZEISS Azure */
-.wy-menu-vertical li.current a:hover {
+/* Changed from #d6d6d6/#c9c9c9 -> ZEISS Azure */
+.wy-menu-vertical li.current a:hover, .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover {
     background: #0072EF;
 }
 
