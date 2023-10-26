@@ -37,6 +37,29 @@ a:visited {
     background: #32373E;
 }
 
+/* Menu level 1, changed from #fcfcfc -> ZEISS Dark Gray */
+.wy-menu-vertical li.current>a {
+    background: #4E565F;
+}
+
+/* Menu level 3, changed from #c9c9c9 -> ZEISS Light Gray */
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+    background: #B4C0CA;
+}
+
+
+/* Changed from #d6d6d6 -> ZEISS Azure */
+.wy-menu-vertical li.current a:hover {
+    background: #0072EF;
+}
+
+/*
+.wy-nav-side {
+    color: #9b9b9b;
+    background: #343131;
+}
+*/
+
 /* Changed from #fcfcfc */
 .wy-nav-content-wrap, .wy-body-for-nav, .wy-nav-content, .wy-dropdown-menu {
     background: #ffffff;
