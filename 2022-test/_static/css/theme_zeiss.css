@@ -38,6 +38,11 @@ a:visited {
     color: #000000;
 }
 
+/* Menu text, changed from #404040 -> ZEISS Black*/
+.wy-menu-vertical li.current>a, .wy-menu-vertical li.on a {
+    color: #000000;
+}
+
 /* Changed from #298069 -> ZEISS Ultradark Gray */ 
 .wy-side-nav-search {
     /* background: #343131; */
@@ -49,14 +54,19 @@ a:visited {
     color: #FFFFFF;
 }
 
-/* Menu level 1, changed from #fcfcfc -> ZEISS Dark Gray */
+/* Menu level 1, changed from #fcfcfc -> ZEISS Light Gray */
 .wy-menu-vertical li.current>a {
-    background: #4E565F;
+    background: #B4C0CA;
 }
 
-/* Menu level 3, changed from #c9c9c9 -> ZEISS Light Gray */
+/* Menu level 2, changed from c9c9c9 -> ZEISS Ultralight Gray */
+.wy-menu-vertical li.toctree-l2.current>a {
+    background: #DCE3E9;
+}
+
+/* Menu level 3, changed from #c9c9c9 -> ZEISS Semiwhite Gray */
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
-    background: #B4C0CA;
+    background: #F2F5F8;
 }
 
 
