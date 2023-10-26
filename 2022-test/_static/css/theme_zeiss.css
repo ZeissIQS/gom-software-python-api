@@ -99,12 +99,12 @@ a:visited {
 }
 
 /* Changed from #1abc9c -> ZEISS Green */
-.rst-content .important .admonition-title, .rst-content .hint .admonition-title {
+.rst-content .important .admonition-title, .rst-content .hint .admonition-title, .rst-content .caution .admonition-title {
     background: #1E8565;
 }
 
 /* Changed from #dbfaf4 -> ZEISS Ultralight Gray */
-.rst-content .important, .rst-content .hint {
+.rst-content .important, .rst-content .hint, .rst-content .caution {
     background: #DCE3E9;
 }
 
