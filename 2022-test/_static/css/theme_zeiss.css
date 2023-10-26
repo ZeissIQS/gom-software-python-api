@@ -1,7 +1,18 @@
-/* Override some styles to match ZEISS branding */
+/****************************************************************************** 
+ * Override some styles to match ZEISS branding
+ *
+ * See https://brand.zeiss.com/
+ *
+ * Copyright 2023, Carl Zeiss GOM Metrology GmbH
+ ******************************************************************************/
 
 /* Based on Read the Docs theme */
 @import 'theme.css';
+
+
+/******************************************************************************
+ * Fonts
+ ******************************************************************************/
 
 /* Use font "ZEISS Frutiger Next W1G" */
 @font-face {
@@ -21,6 +32,11 @@ html, body, .rst-content .toctree-wrapper>p.caption, h1, h2, h3, h4, h5, h6, leg
     color: #000000; /* was #404040 */
 }
 
+
+/******************************************************************************
+ * Links
+ ******************************************************************************/
+
 /* Changed from #2980b9 -> ZEISS Azure */
 a {
     color: #0072EF;
@@ -30,6 +46,11 @@ a {
 a:visited {
     color: #4C6BB1;
 }
+
+
+/******************************************************************************
+ * Menu section text, changed from #55a5d9 -> ZEISS Sky Blue, from 85% -> 100%
+ ******************************************************************************/
 
 /* Menu section text, changed from #55a5d9 -> ZEISS Sky Blue, from 85% -> 100% */
 .wy-menu-vertical p.caption {
@@ -88,6 +109,11 @@ a:visited {
     background: #ffffff;
 }
 
+
+/******************************************************************************
+ * Admonitions
+ ******************************************************************************/
+
 /* Changed from #6ab0de -> ZEISS Saphire */
 .rst-content .note .admonition-title, .rst-content .seealso .admonition-title {
     background: #4C6BB1;
@@ -117,6 +143,11 @@ a:visited {
 .rst-content .warning, .rst-content .attention {
     background: #DCE3E9;
 }
+
+
+/******************************************************************************
+ * Literal text / code examples
+ ******************************************************************************/
 
 /* Changed from #e74c3c -> ZEISS Purple Red */
 .rst-content code.literal {
