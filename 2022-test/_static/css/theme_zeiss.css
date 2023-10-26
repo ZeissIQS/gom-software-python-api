@@ -108,6 +108,15 @@ a:visited {
     background: #DCE3E9;
 }
 
+/* Changed from #f0b37e -> ZEISS Orange */
+.rst-content .warning .admonition-title {
+    background: #EA591B;
+}
+
+/* Changed from # #ffedcc -> ZEISS Ultralight Gray */
+.rst-content .warning {
+    background: #DCE3E9;
+}
 
 /* Changed from #e74c3c -> ZEISS Purple Red */
 .rst-content code.literal {
