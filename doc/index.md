@@ -1,9 +1,9 @@
 ---
 myst:
-   html_meta:
-      "description": "Introduction to the Python API for extending GOM Inspect 2022 with Packages/Add-ons"
-      "keywords": "Metrology, GOM Inspect, Python API, GOM API, Scripting, Packages, Add-ons, How-tos"
----
+   html_meta:
+      "description": "Introduction to the Python API for extending GOM Inspect 2022 with Packages/Add-ons"
+      "keywords": "Metrology, GOM Inspect, Python API, GOM API, Scripting, Packages, Add-ons, How-tos"
+--- 
 
 # GOM Inspect Add-On Development Documentation
 
