@@ -43,11 +43,13 @@
     ```{code-block} python
     :caption: Example&colon; Script with separate dialog file
 
+
     RESULT=gom.script.sys.execute_user_defined_dialog (file=':dialog.gdlg')
     ```
 
     ```{code-block} python
     :caption: Example&colon; Script with embedded dialog
+
 
     RESULT=gom.script.sys.execute_user_defined_dialog (dialog={
         "content": [
@@ -306,6 +308,7 @@ Continuous text widget
 %   field editor prior to script execution, so an invalid value will most certainly be displayed instead.
 %
 % To Do: Check how to insert local variables
+
 
 | Property            | Type | Example                                                    |
 | ------------------- | ---- | ---------------------------------------------------------- |
@@ -721,6 +724,7 @@ print( RESULT.sliderWidget ) # some text
 
 % ticks are not drawn:
 % tick_interval - double - Interval of ticks drawn
+
 
 
 #### Checkbox widget
@@ -1360,6 +1364,7 @@ DIALOG.handler = handler_function
 # Execute dialog
 RESULT=gom.script.sys.show_user_defined_dialog (dialog=DIALOG)
 ```
+
 
 A complete example with a handler function can be found in the file [scriptingEditorExampleDialog.py](assets/scriptingEditorExampleDialog.py). The argument passed to the event handler is either the dialog widget (e.g. a button) which triggered the event handler or a string. The following table lists all possible strings:
 
