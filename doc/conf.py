@@ -39,6 +39,7 @@ sitemap_url_scheme = "{link}"
 
 #html_theme = 'alabaster'
 html_theme = "sphinx_rtd_theme"
+html_title = ['<project>']
 html_static_path = ['_static']
 
 # -- Override some "sphinx_rtd_theme" styles to match ZEISS branding ---------------
