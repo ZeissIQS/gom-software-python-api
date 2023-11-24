@@ -4,9 +4,10 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
     <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Using script dialogs &mdash; Add-On Documentation  documentation</title>
+  <title>Using script dialogs &mdash; Add-On Documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme_zeiss.css" type="text/css" />
+    <link rel="canonical" href="https://zeissiqs.github.io/gom-software-python-api/2022/howtos/python_api_introduction/script_dialogs_introduction.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -19,8 +20,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Using script resources" href="using_script_resources.html" />
-    <link rel="prev" title="Python API introduction" href="python_api_introduction.html" /> 
+    <link rel="next" title="Creating wizard dialogs" href="creating_wizard_dialogs.html" />
+    <link rel="prev" title="GOM Inspect Python API introduction" href="python_api_introduction.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -33,6 +34,7 @@
           
           <a href="../../index.html" class="icon icon-home">
             Add-On Documentation
+              <img src="../../_static/zeiss-logo-rgb.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -45,7 +47,7 @@
               <p class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../environments_for_python_scripts/environments_for_python_scripts.html">Environments for python scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_api_introduction.html">Python API introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_api_introduction.html">GOM Inspect Python API introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using script dialogs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#creating-dialogs">Creating dialogs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#dialog-designer">Dialog designer</a></li>
@@ -124,10 +126,12 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="creating_wizard_dialogs.html">Creating wizard dialogs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_script_resources.html">Using script resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripted_elements/scripted_elements_toc.html">Scripted elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adding_workspaces_to_packages/adding_workspaces_to_packages.html">Adding workspaces to add-ons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../using_vscode_editor/using_vscode_editor.html">Using Visual Studio Code as an add-on editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../localization/localization.html">Localization of packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing_addons/testing_addons.html">Testing add-ons</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python API Examples</span></p>
@@ -143,7 +147,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Python API Specification</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../python_api/python_api.html">Python API functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_api/python_api.html">GOM Inspect Python API documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python_api/scripted_elements_api.html">Scripted elements API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python_api/resource_api.html">gom.Resource API</a></li>
 </ul>
@@ -219,10 +223,17 @@
   | ----------------------------------------- |
   | <pre>RESULT=gom.script.sys.execute_user_defined_dialog (file=':dialog.gdlg')</pre> |
   -->
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">RESULT</span><span class="o">=</span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">execute_user_defined_dialog</span> <span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;:dialog.gdlg&#39;</span><span class="p">)</span>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Example: Script with separate dialog file</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">RESULT</span><span class="o">=</span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">execute_user_defined_dialog</span> <span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;:dialog.gdlg&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">RESULT</span><span class="o">=</span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">execute_user_defined_dialog</span> <span class="p">(</span><span class="n">dialog</span><span class="o">=</span><span class="p">{</span>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Example: Script with embedded dialog</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">RESULT</span><span class="o">=</span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">execute_user_defined_dialog</span> <span class="p">(</span><span class="n">dialog</span><span class="o">=</span><span class="p">{</span>
     <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">[</span>
             <span class="p">{</span>
@@ -248,6 +259,7 @@
     <span class="p">}</span>
 <span class="p">})</span>
 </pre></div>
+</div>
 </div>
 </li>
 <li><p>The options for the dialog <strong>Type</strong> are</p>
@@ -435,8 +447,8 @@ into <a class="reference internal" href="#executing-dialogs">Executing dialogs</
 <li><p>Usually, the names are corresponding with the elements’ semantics. For example, the name of the <strong>ok</strong> button is ‘ok’. The names can also be obtained from the <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> string as shown in the code example below.</p></li>
 <li><p>The control elements are accessed like all other widget attributes.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Accessing the control widget</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Accessing the control widget</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print control widget properties&lt;br&gt;print (DIALOG.control.__doc__)</span>
 <span class="n">ControlGroup</span>
 
@@ -479,8 +491,8 @@ into <a class="reference internal" href="#executing-dialogs">Executing dialogs</
 <li><p>The status label can be configured using its properties like all other widgets.</p></li>
 </ul>
 <p><img alt="" src="../../_images/control_widget_status_label.png" /></p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Using the Status label</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Using the Status label</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DIALOG</span><span class="o">=</span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">create_user_defined_dialog</span> <span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;dialog definition&#39;</span><span class="p">)</span>
 
 <span class="c1"># Set status label text</span>
@@ -616,8 +628,8 @@ into <a class="reference internal" href="#executing-dialogs">Executing dialogs</
 <h5>Internal representation of a dialog with text widget<a class="headerlink" href="#internal-representation-of-a-dialog-with-text-widget" title="Permalink to this heading"></a></h5>
 <p>The dialog is stored as a JSON document internally.</p>
 <p><img alt="" src="../../_images/text_field.png" /></p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Internal representation of a dialog</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Internal representation of a dialog</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">execute_user_defined_dialog</span> <span class="p">(</span><span class="n">dialog</span><span class="o">=</span><span class="p">{</span>
 	<span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
 		<span class="p">[</span>
@@ -712,8 +724,8 @@ into <a class="reference internal" href="#executing-dialogs">Executing dialogs</
 <section id="internal-representation-of-a-dialog-with-image-widget">
 <h5>Internal representation of a dialog with image widget<a class="headerlink" href="#internal-representation-of-a-dialog-with-image-widget" title="Permalink to this heading"></a></h5>
 <p>The dialog is stored as a JSON document internally. The ‘data’ element contains the image data.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Internal representation of an image</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Internal representation of an image</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The &#39;data&#39; element contains the image data (shortened version here)</span>
 <span class="n">RESULT</span><span class="o">=</span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">execute_user_defined_dialog</span> <span class="p">(</span><span class="n">dialog</span><span class="o">=</span><span class="p">{</span>
     <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -721,7 +733,7 @@ into <a class="reference internal" href="#executing-dialogs">Executing dialogs</
             <span class="p">{</span>
                 <span class="s2">&quot;columns&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                 <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;AAAAAYlQTkcNChoKAAAADUlIRFIAAAQAAAACQAgCAAAAnPeDgptZSsdt...&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;file_name&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/Users/IQMPRINK/Downloads/zeiss-inspect_python.jpg&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;file_name&quot;</span><span class="p">:</span> <span class="s2">&quot;zeiss-inspect_python.jpg&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">144</span><span class="p">,</span>
                 <span class="s2">&quot;keep_aspect&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
                 <span class="s2">&quot;keep_original_size&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
@@ -1614,7 +1626,7 @@ into <a class="reference internal" href="#executing-dialogs">Executing dialogs</
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chosen system plane:&quot;</span><span class="p">,</span> <span class="n">RESULT</span><span class="o">.</span><span class="n">input_new</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The complete code of the example is attached to this document.</p>
+<p>Please find the complete example here: <a class="reference download internal" download="" href="../../_downloads/103208b9004accadabdd7dfe3eea9371/dialog_custom_elem_select.py"><span class="xref download myst">dialog_custom_elem_select.py</span></a></p>
 </section>
 <section id="selection-list-widget">
 <h4>Selection list widget<a class="headerlink" href="#selection-list-widget" title="Permalink to this heading"></a></h4>
@@ -1779,6 +1791,7 @@ into <a class="reference internal" href="#executing-dialogs">Executing dialogs</
 <dt>Abort button widget</dt><dd><p>The Abort button widget aborts the current action. It is disabled if no action is currently executed. It behaves in the same manner as the abort button in the lower right corner of the ZEISS Inspect software.</p>
 </dd>
 </dl>
+<p><img alt="" src="../../_images/built-in_progressbar.png" /></p>
 </section>
 <section id="tolerances-widget">
 <h4>Tolerances widget<a class="headerlink" href="#tolerances-widget" title="Permalink to this heading"></a></h4>
@@ -2026,8 +2039,8 @@ into <a class="reference internal" href="#executing-dialogs">Executing dialogs</
 <li><p>A dialog is created and executed by subsequent commands.</p></li>
 <li><p>This way, the created dialog can be modified by the script right before execution.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Creating and executing a dialog with two separate commands</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Creating and executing a dialog with two separate commands</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create dialog, but do not execute it yet</span>
 <span class="n">DIALOG</span> <span class="o">=</span> <span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">create_user_defined_dialog</span> <span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;...&#39;</span><span class="p">)</span>
 
@@ -2056,8 +2069,8 @@ into <a class="reference internal" href="#executing-dialogs">Executing dialogs</
 </li>
 </ul>
 <p>💡 At script termination all open dialogs are closed automatically.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Non blocking configurable dialogs</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Non blocking configurable dialogs</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create dialog but do not execute it yet</span>
 <span class="n">DIALOG</span> <span class="o">=</span> <span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">create_user_defined_dialog</span> <span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;...&#39;</span><span class="p">)</span>
 
@@ -2161,8 +2174,8 @@ and ‘No’ results for the different buttons and ‘Cheater’ when the user u
 <li><p>Each widget in the dialog can be accessed via the dialog handle.</p></li>
 <li><p>The widget is identified by its unique name.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Configuring dialog widgets</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Configuring dialog widgets</span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create dialog and receive dialog handle</span>
 <span class="n">DIALOG</span> <span class="o">=</span> <span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">create_user_defined_dialog</span> <span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;...&#39;</span><span class="p">)</span>
 
@@ -2200,8 +2213,8 @@ and ‘No’ results for the different buttons and ‘Cheater’ when the user u
 </tbody>
 </table>
 <p>For the type of the value property for a specific widget, see section <a class="reference internal" href="#specific-widgets">Specific widgets</a> above. For widgets which are not used to enter some value, <code class="docutils literal notranslate"><span class="pre">value</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and read-only. In addition, widgets have further attributes depending on their type (see section <a class="reference internal" href="#specific-widgets">Specific widgets</a> above for details).</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Accessing widget attributes</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Accessing widget attributes</span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create dialog but do not execute it yet</span>
 <span class="n">DIALOG</span><span class="o">=</span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">create_dialog</span> <span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;...&#39;</span><span class="p">)</span>
 
@@ -2227,8 +2240,8 @@ and ‘No’ results for the different buttons and ‘Cheater’ when the user u
 <li><p>The handler function is registered using the special attribute <code class="docutils literal notranslate"><span class="pre">handler</span></code>.</p></li>
 <li><p>The <strong>prev</strong> and <strong>next</strong> buttons of a wizard dialog are the only control widgets, which trigger the event handler.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Dialog handler functions</span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Dialog handler functions</span><a class="headerlink" href="#id11" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DIALOG</span><span class="o">=</span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">create_user_defined_dialog</span> <span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;dialog definition&#39;</span><span class="p">)</span>
 
 <span class="c1"># Handler function registered to the dialog</span>
@@ -2275,8 +2288,8 @@ and ‘No’ results for the different buttons and ‘Cheater’ when the user u
 </table>
 <p>If the widget parameter is not a string, it represents a widget object. Note, that you cannot use the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator on these objects. Always use <code class="docutils literal notranslate"><span class="pre">==</span></code> and similar
 operators to compare the widget parameter:</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Comparing widget parameters</span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Comparing widget parameters</span><a class="headerlink" href="#id12" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">handler_function</span> <span class="p">(</span><span class="n">widget</span><span class="p">):</span>
     <span class="o">...</span>
     <span class="c1"># compare widget using &quot;==&quot;, using &quot;is&quot; will not work!</span>
@@ -2293,8 +2306,8 @@ operators to compare the widget parameter:</p>
 <h4>Closing dialogs from within the event handler<a class="headerlink" href="#closing-dialogs-from-within-the-event-handler" title="Permalink to this heading"></a></h4>
 <p>💡 Dialogs can be closed from within event handlers.</p>
 <p><img alt="" src="../../_images/event_handler_script_launcher.png" /></p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Button event handler</span><a class="headerlink" href="#id11" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">Button event handler</span><a class="headerlink" href="#id13" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dialog_event_handler</span> <span class="p">(</span><span class="n">widget</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">widget</span> <span class="o">==</span> <span class="n">DIALOG</span><span class="o">.</span><span class="n">button1</span><span class="p">:</span>
         <span class="n">execute_func_1</span> <span class="p">()</span>
@@ -2328,8 +2341,8 @@ about its attributes:</p>
 <p>💡 Please note that the timer is disabled by default.</p>
 <p>Example:</p>
 <p><img alt="" src="../../_images/event_handler_timer_edit.png" /></p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">Button/Timer event handler</span><a class="headerlink" href="#id12" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Button/Timer event handler</span><a class="headerlink" href="#id14" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DIALOG</span><span class="o">=</span><span class="n">gom</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">create_user_defined_dialog</span> <span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;boring dialog definition&#39;</span><span class="p">)</span>
 
 <span class="c1">#</span>
@@ -2379,8 +2392,8 @@ about its attributes:</p>
 <li><p>The more commonly used widget attributes are documented in the section <a class="reference internal" href="#specific-widgets">Specific widgets</a> above.</p></li>
 </ul>
 <p>💡 Most objects support the attribute <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> which prints the available object documentation to the console.</p>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">Print object documentation</span><a class="headerlink" href="#id13" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">Print object documentation</span><a class="headerlink" href="#id15" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="c1"># Query __doc__ attribute of a button widget</span>
 <span class="c1">#</span>
@@ -2424,8 +2437,8 @@ about its attributes:</p>
 <h3>Control widgets<a class="headerlink" href="#control-widgets" title="Permalink to this heading"></a></h3>
 <p>The operational elements in a control widget from a wizard do act like those in regular dialogs und can be accessed via handles as well:</p>
 <p><img alt="" src="../../_images/wizard.png" /></p>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">Wizard example</span><a class="headerlink" href="#id14" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">Wizard example</span><a class="headerlink" href="#id16" title="Permalink to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="c1"># Create dialog with wizard control panel</span>
 <span class="c1">#</span>
@@ -2461,7 +2474,7 @@ about its attributes:</p>
 </pre></div>
 </div>
 </div>
-<p><a class="reference internal" href="#creating_wizard_dialogs.md"><span class="xref myst">Creating wizard dialogs</span></a> shows some ways to manage wizard dialogs in greater detail.</p>
+<p><a class="reference internal" href="creating_wizard_dialogs.html"><span class="std std-doc">Creating wizard dialogs</span></a> shows some ways to manage wizard dialogs in greater detail.</p>
 </section>
 </section>
 </section>
@@ -2470,14 +2483,14 @@ about its attributes:</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="python_api_introduction.html" class="btn btn-neutral float-left" title="Python API introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="using_script_resources.html" class="btn btn-neutral float-right" title="Using script resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="python_api_introduction.html" class="btn btn-neutral float-left" title="GOM Inspect Python API introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="creating_wizard_dialogs.html" class="btn btn-neutral float-right" title="Creating wizard dialogs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Carl Zeiss GOM Metrology GmbH.</p>
+    <p>&#169; Copyright 2023, Carl Zeiss GOM Metrology GmbH.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

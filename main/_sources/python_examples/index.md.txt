@@ -1,6 +1,12 @@
+---
+myst:
+   html_meta:
+      "description": "Examples for using the GOM Inspect 2023 Add-on Python API"
+      "keywords": "Metrology, GOM Inspect, Python API, GOM API, Scripting, Packages, Add-ons, Examples"
+---
 # Overview
 
-Welcome to the Python API Examples. Here you can find the documentation of the examples which are provided by the
+Welcome to the GOM Inspect Python API Examples. Here you can find the documentation of the examples which are provided by the
 `Python API Examples` Add-On. You can reuse and adapt these code examples to your specific use case and learn the best-practices we recommend.
 
 ## How the examples are structured
@@ -54,14 +60,14 @@ The following project files are included:
 
 ## Examples by topic
 
-| Folder                                   | Description                                                  |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| [data_interfaces](data_interfaces.rst)   | Access to data of GOM "elements"                             |
-| [dialog_widgets](dialog_widgets.rst)     | Examples how use custom dialogs and handle user input events |
-| [misc](misc.rst)                         | Miscellaneous examples                                       |
-| [script_icons](script_icons.rst)         | Set icons for scripts or buttons                             |
-| [script_resources](script_resources.rst) | How to access binary data of your add-on (resources)         |
-| [scripted_actuals](scripted_actuals.rst) | Building actual elements with custom python code             |
-| [scripted_checks](scripted_checks.rst)   | Building custom checks with python code                      |
+| Folder                                  | Description                                                  |
+| --------------------------------------- | ------------------------------------------------------------ |
+| [data_interfaces](data_interfaces.md)   | Access to data of GOM "elements"                             |
+| [dialog_widgets](dialog_widgets.md)     | Examples how use custom dialogs and handle user input events |
+| [misc](misc.md)                         | Miscellaneous examples                                       |
+| [script_icons](script_icons.md)         | Set icons for scripts or buttons                             |
+| [script_resources](script_resources.md) | How to access binary data of your add-on (resources)         |
+| [scripted_actuals](scripted_actuals.md) | Building actual elements with custom python code             |
+| [scripted_checks](scripted_checks.md)   | Building custom checks with python code                      |
 
  
