@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
@@ -10,15 +12,11 @@
 
   
     <link rel="canonical" href="https://zeissiqs.github.io/gom-software-python-api/2022/python_api/scripted_elements_api.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/jquery.js"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+      <script src="../_static/doctools.js"></script>
+      <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -356,7 +354,7 @@
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span>
 </pre></div>
 </div>
 </section>
@@ -371,7 +369,7 @@
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;point1&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">),</span> <span class="s1">&#39;point2&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="p">}</span>
-<span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;point1&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span><span class="p">,</span> <span class="s1">&#39;point2&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span> <span class="p">}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;point1&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="s1">&#39;point2&#39;</span><span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span> <span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -399,7 +397,7 @@
 <dd class="field-even"><p>A center point, direction vector and radius (double)</p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;center&#39;</span> <span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span> <span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span><span class="p">,</span> <span class="s1">&#39;radius&#39;</span> <span class="p">:</span> <span class="n">double</span> <span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;center&#39;</span> <span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span> <span class="p">:</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="s1">&#39;radius&#39;</span> <span class="p">:</span> <span class="n">double</span> <span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -413,7 +411,7 @@
 <dd class="field-even"><p>A curve can be made up by an array of subcurves. Each subcurve is a polyline. A closed curve will be created, if first point = last point.</p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span><span class="p">,</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="p">}</span> <span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="p">}</span> <span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -466,7 +464,7 @@
 <dd class="field-even"><p>A set of points. The ‘normals ‘attribute is optional.</p>
 </dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;points&#39;</span> <span class="p">:</span>  <span class="p">[</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span><span class="p">,</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">,</span> <span class="s1">&#39;normals&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span><span class="p">,</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3D</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;points&#39;</span> <span class="p">:</span>  <span class="p">[</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">,</span> <span class="s1">&#39;normals&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="n">gom</span><span class="o">.</span><span class="n">Vec3d</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span> <span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -677,7 +675,7 @@
   <div class="footer">
     <a href="https://www.gom.com/en/imprint" target="_blank" rel="noopener noreferrer">Imprint</a>
   </div>
-  <jinja2.runtime.BlockReference object at 0x7fef5b6f3e20>
+  <jinja2.runtime.BlockReference object at 0x7f31e2f3d900>
 
 
 </footer>
