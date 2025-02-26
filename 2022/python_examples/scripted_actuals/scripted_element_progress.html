@@ -118,7 +118,7 @@
 <h2>Highlights<a class="headerlink" href="#highlights" title="Permalink to this heading"></a></h2>
 <p>The scripted element itself is not of interest here, as it is rather meaningless: a point that will always be created at <em>(1,0,0)</em>.
 To showcase the display of calculation progress, a loop with 100 steps containing a <code class="docutils literal notranslate"><span class="pre">sleep</span></code> call to simulate computation are performed in the <code class="docutils literal notranslate"><span class="pre">calculation</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculation</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculation</span> <span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
   <span class="n">context</span><span class="o">.</span><span class="n">progress_stages_total</span> <span class="o">=</span> <span class="n">limit</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
     <span class="n">context</span><span class="o">.</span><span class="n">progress_stages_computing</span> <span class="o">=</span> <span class="n">i</span>
@@ -159,7 +159,7 @@ To showcase the display of calculation progress, a loop with 100 steps containin
   <div class="footer">
     <a href="https://www.gom.com/en/imprint" target="_blank" rel="noopener noreferrer">Imprint</a>
   </div>
-  <jinja2.runtime.BlockReference object at 0x7f76622f9ff0>
+  <jinja2.runtime.BlockReference object at 0x7fb639baf850>
 
 
 </footer>

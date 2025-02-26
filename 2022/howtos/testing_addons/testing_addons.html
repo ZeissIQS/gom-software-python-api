@@ -139,14 +139,14 @@
 (Example: <code class="docutils literal notranslate"><span class="pre">PythonApiExamples/tests/test_data_interfaces_check_results</span></code>)</p></li>
 <li><p>Import the module or package to be tested: Import the module or package that you want to test.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the example we want to test</span>
-<span class="kn">import</span> <span class="nn">PythonApiExamples.examples.data_interfaces.check_results_data_array</span> <span class="k">as</span> <span class="nn">example</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">PythonApiExamples.examples.data_interfaces.check_results_data_array</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">example</span>
 </pre></div>
 </div>
 <p>For this to work properly, the code that you want to test needs to be structured in functions as well. In this case, there are several functions in the <code class="docutils literal notranslate"><span class="pre">check_results_data_arrray</span></code> script, like <code class="docutils literal notranslate"><span class="pre">get_single_result_value()</span></code>, which will be called later (see step 3).
 For more details, see also: <a class="reference internal" href="../../python_examples/index.html#how-the-examples-are-structured"><span class="std std-ref">How the examples are structured</span></a>.</p>
 </li>
 <li><p>Write test functions: Write test functions named with prefix <code class="docutils literal notranslate"><span class="pre">test_</span></code> that define expected behavior.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_check_results</span> <span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test_check_results</span> <span class="p">():</span>
   <span class="c1"># Setup test project</span>
   <span class="n">open_project</span><span class="p">(</span><span class="s1">&#39;gom_part_test_project&#39;</span><span class="p">)</span>
   <span class="n">test_element</span> <span class="o">=</span> <span class="n">gom</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">inspection</span><span class="p">[</span><span class="s1">&#39;Surface comparison 1&#39;</span><span class="p">]</span>
@@ -172,7 +172,7 @@ For more details, see also: <a class="reference internal" href="../../python_exa
 <section id="running-all-tests">
 <h2>Running all tests<a class="headerlink" href="#running-all-tests" title="Permalink to this heading"></a></h2>
 <p>To run all tests, it is recommended to create a wrapper script that includes the calls to the test scripts. You can invoke calls to the test scripts using the command <code class="docutils literal notranslate"><span class="pre">gom.script.userscript.&lt;script_path&gt;</span></code>, which will execute the script as if run separately using the script editor. The <code class="docutils literal notranslate"><span class="pre">&lt;script_path&gt;</span></code> is to be replaced with a string desribing the location of the test script, whereas double underscores (<code class="docutils literal notranslate"><span class="pre">__</span></code>) indicate subdirectories.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gom</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gom</span>
 <span class="c1">#</span>
 <span class="c1"># Run tests</span>
 <span class="c1">#</span>
@@ -210,7 +210,7 @@ For more details, see also: <a class="reference internal" href="../../python_exa
   <div class="footer">
     <a href="https://www.gom.com/en/imprint" target="_blank" rel="noopener noreferrer">Imprint</a>
   </div>
-  <jinja2.runtime.BlockReference object at 0x7f7662e571c0>
+  <jinja2.runtime.BlockReference object at 0x7fb639b145e0>
 
 
 </footer>
