@@ -20,6 +20,9 @@ jobs:
           else
             echo -e "\033[1;32mSphinx build PASSED\033[0m\n"
           fi
+      - name: Insert HTTP redirection after 5 seconds
+        run: |
+          sed -i 's|</head>|    <meta http-equiv="refresh" content="5;url=https://zeiss.github.io/gom-software-python-api/2022/">\n</head>|' _build/index.html
       - name: Set branch name
         id: branch
         run: echo "SUBDIR_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
