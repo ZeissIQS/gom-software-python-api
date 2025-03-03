@@ -5,7 +5,7 @@ myst:
         content: "Introduction to the Python API for extending GOM Inspect 2022 with Packages/Add-ons"
       - name: "keywords"
         content: "Metrology, GOM Inspect, Python API, GOM API, Scripting, Packages, Add-ons, How-tos"
-      - http-equiv": "refresh" 
+      - http-equiv: "refresh" 
         content: "5; url=https://zeiss.github.io/gom-software-python-api/2022/"
 --- 
 
