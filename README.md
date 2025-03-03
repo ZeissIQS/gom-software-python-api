@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This repository has been copied to https://github.com/ZEISS/gom-software-python-api and will eventually be deleted.
+> 
 # gom-software-python-api
 
 This repository contains documentation sources and examples for the GOM software Python API.
